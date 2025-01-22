@@ -1,0 +1,172 @@
+.inicio {
+  height: 100dvh;
+  text-transform: uppercase;
+  background: $characters-gradient;
+  background-blend-mode: overlay;
+}
+
+.container_main {
+  width: 90vw;
+  margin: 4rem auto;
+
+  .title {
+    font-size: 3.6rem;
+  }
+}
+
+.container_main__characters {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 90vw;
+  margin: 3rem auto;
+}
+
+article {
+  width: 25rem;
+  border-radius: 22px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  h2 {
+    width: 40%;
+    margin-left: 3rem;
+    font-size: 2rem;
+    font-weight: 400;
+    transform: translateY(1.2rem);
+  }
+
+  .container_img {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  img {  
+    width: 62%;
+    height: 320px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+}
+
+.container_button_hashira {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.button_hashira {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.2rem 1.3rem;
+  background-color: #111;
+  border: none;
+  border-radius: 3.4rem;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+
+  p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $slayer-orange;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.container_buttons_controles {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+// Classes de Personagens
+
+.fundo_tanjiro {
+  @include fundo-personagem($tanjiro);
+}
+
+.fundo_nezuko {
+  @include fundo-personagem($nezuko);
+
+  .container_img img {
+    height: 300px;
+    margin-top: 1.2rem
+  }
+}
+
+.fundo_zenitsu {
+  @include fundo-personagem($zenitsu);
+}
+
+.fundo_inosuke {
+  @include fundo-personagem($inosuke);
+}
+
+@media (width >= 801px) and (width <= 1094px) {
+  article {
+    width: 19rem;
+  }
+}
+
+@media (width <= 800px) {
+  .container_main {
+    .title {
+      font-size: 2.8rem;
+      text-align: center;
+    }
+
+    .container_main__characters {
+      overflow-x: scroll;
+      gap: 2rem;
+
+      article {
+        width: 22rem;
+        transition: all 0.3s ease-in-out;
+        opacity: 0.6;
+        filter: blur(6px);
+
+        &:hover {
+          transform: scale(1);
+        }
+      }
+
+      article.visible { 
+        opacity: 1;
+        filter: blur(0); 
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  .container_buttons_controles {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    button:nth-child(1) {
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .button_hashira:hover {
+    transform: scale(1);
+  }
+
+  .container_button_hashira {
+    justify-content: center;
+  }
+}

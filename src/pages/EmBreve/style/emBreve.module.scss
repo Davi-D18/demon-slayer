@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: #0000;
+  background-color: #f4f4f4;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #ff5722;
+}
+
+.description {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: $white;
+  background-color: #007bff;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
