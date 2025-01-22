@@ -2,12 +2,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $font-inter;
 }
 
 html {
   font-size: 62.5%;
 }
 
+body {
+  color: $white;
+}
+
 a {
   text-decoration: none;
+  color: $white;
+}
+
+img {
+  -webkit-user-drag: none;
 }

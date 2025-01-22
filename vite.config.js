@@ -4,10 +4,14 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+    host: true
+  },
   resolve: {
     alias: {
       '@c': path.resolve('./src/components'),
-      '@public': path.resolve('./public')
+      '@public': path.resolve('./public'),
+      '@src': path.resolve('./src')
     }
   },
   css: {

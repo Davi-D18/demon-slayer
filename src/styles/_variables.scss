@@ -1,2 +1,33 @@
-$primary-color: #f00;
-$secondary-color: #0f0;
+// Cores
+$slayer-orange: #FF9900;
+$white: #FFFFFF;
+
+// Gradientes
+$characters-gradient: linear-gradient(180deg, rgba(11, 1, 72, 1) 0%, rgba(23, 9, 115, 1) 100%), url("@public/fundos/fundo-casa.png");
+
+// Fontes
+$font-inter: 'Inter', sans-serif;
+$font-arapey: 'Arapey', serif;
+
+// Estilos Personagens
+$tanjiro: linear-gradient(180deg, #29795F 0%, #0DFFB0 100%), url("@public/personagens/tanjiro/tanjiro-fundo.png") top right / cover;
+
+$nezuko: linear-gradient(180deg, #FF4D97 0%, #321E00 100%), url("@public/personagens/nezuko/nezuko-fundo.png") top right / cover;
+
+$zenitsu: linear-gradient(180deg, #FFB300 0%, #321E00 100%), url("@public/personagens/zenitsu/zenitsu-fundo.png") top / cover;
+
+$inosuke: linear-gradient(180deg, #D3A478 0%, #321E00 100%), url("@public/personagens/inosuke/inosuke-fundo.png") bottom;
+
+// Mixins
+@mixin fundo-personagem ($personagem) {
+  background: $personagem;
+  background-blend-mode: overlay;
+}
+
+@mixin fundo-personagem-detalhes($imagem, $overlay: rgba(0, 0, 0, 0.6), $position: center) {
+  background: 
+    linear-gradient($overlay, $overlay), 
+    url($imagem);
+  background-size: cover;
+  background-position: $position;
+}
