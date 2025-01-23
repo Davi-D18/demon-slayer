@@ -9,21 +9,21 @@
 }
 
 .mensagem {
-  display: none;
-  align-items: center;
-  gap: 1rem;
   position: fixed;
   top: 15%;
   left: 37%;
-  background: linear-gradient(135deg, #1b1b1b, #2c2c2c); 
-  color: $white; 
+  display: none;
+  align-items: center;
+  gap: 1rem; 
   padding: 1rem 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  font-family: Cinzel, serif;
   letter-spacing: 0.1rem;
-  text-align: center;
-  font-family: 'Cinzel', serif; 
-  border: 2px solid #1dbf73; 
+  text-align: center; 
+  color: $white;
+  background: linear-gradient(135deg, #1b1b1b, #2c2c2c); 
+  border: 2px solid #1dbf73;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgb(0 0 0 / 50%); 
   animation: aparecer 0.5s ease-in-out;
 
   img {
@@ -171,6 +171,7 @@
     opacity: 0;
     transform: translateY(-100%);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0%);
@@ -182,6 +183,7 @@
     opacity: 1;
     transform: translateY(0%);
   }
+
   100% {
     opacity: 0;
     transform: translateY(-100%);
