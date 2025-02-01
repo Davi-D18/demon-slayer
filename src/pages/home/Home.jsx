@@ -26,7 +26,6 @@ export const Home = () => {
   }
 
   useEffect(() => {
-    console.log(cardsRef.current)
     if (!cardsRef.current.length) return
 
     const cards = cardsRef.current

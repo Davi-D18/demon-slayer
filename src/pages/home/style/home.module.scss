@@ -189,8 +189,17 @@ article {
     }
   }
 
-  .button_hashira:hover {
-    transform: scale(1);
+  .button_hashira {
+    transition: transform 0.2s ease-in-out;
+    cursor: none;
+
+    &:hover {
+      transform: scale(1);
+    }
+
+    &:active {
+      transform: scale(0.8);
+    }
   }
 
   .container_button_hashira {

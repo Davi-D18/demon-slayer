@@ -1,12 +1,16 @@
+import RengokuDetalhes from '@public/hashiras/rengoku/rengoku-detalhes.png'
 import RengokuFundo from '@public/hashiras/rengoku/rengoku-fundo.png'
 import Rengoku from '@public/hashiras/rengoku/rengoku.png'
 
+import UzuiDetalhes from '@public/hashiras/uzui/uzui-detalhes.png'
 import UzuiFundo from '@public/hashiras/uzui/uzui-fundo.png'
 import Uzui from '@public/hashiras/uzui/uzui.png'
 
+import TomiokaDetalhes from '@public/hashiras/tomioka/tomioka-detalhes.png'
 import TomiokaFundo from '@public/hashiras/tomioka/tomioka-fundo.png'
 import Tomioka from '@public/hashiras/tomioka/tomioka.png'
 
+import TokitoDetalhes from '@public/hashiras/tokito/tokito-detalhes.png'
 import TokitoFundo from '@public/hashiras/tokito/tokito-fundo.png'
 import Tokito from '@public/hashiras/tokito/tokito.png'
 
@@ -14,7 +18,7 @@ export const hashiras = [
   {
     id: 5,
     nome: 'Rengoku Kyojuro',
-    galeria: [Rengoku, RengokuFundo],
+    galeria: [Rengoku, RengokuFundo, RengokuDetalhes],
     classes: ['fundo_rengoku', 'rengoku_detalhes'],
     respiracao1: ['respiracao_chamas', 'Respiração das Chamas'],
     paragrafo1:
@@ -25,7 +29,7 @@ export const hashiras = [
   {
     id: 6,
     nome: 'Tengen Uzui',
-    galeria: [Uzui, UzuiFundo],
+    galeria: [Uzui, UzuiFundo, UzuiDetalhes],
     classes: ['fundo_uzui', 'uzui_detalhes'],
     respiracao1: ['respiracao_som', 'Respiração do Som'],
     paragrafo1:
@@ -36,7 +40,7 @@ export const hashiras = [
   {
     id: 7,
     nome: 'Tomioka Giyu',
-    galeria: [Tomioka, TomiokaFundo],
+    galeria: [Tomioka, TomiokaFundo, TomiokaDetalhes],
     classes: ['fundo_tomioka', 'tomioka_detalhes'],
     respiracao1: ['respiracao_agua', 'Respiração da Água'],
     paragrafo1:
@@ -47,7 +51,7 @@ export const hashiras = [
   {
     id: 8,
     nome: 'Muichiro Tokito',
-    galeria: [Tokito, TokitoFundo],
+    galeria: [Tokito, TokitoFundo, TokitoDetalhes],
     classes: ['fundo_tokito', 'tokito_detalhes'],
     respiracao1: ['respiracao_nevoa', 'Respiração da Nevoa'],
     paragrafo1:

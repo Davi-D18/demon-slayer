@@ -1,3 +1,4 @@
+// Personagens
 .tanjiro_detalhes {
   @include fundo-personagem-detalhes("https://i.pinimg.com/1200x/a4/00/4b/a4004b19548866ca7f3c6bbacf236e8e.jpg");
 }
@@ -12,6 +13,28 @@
 
 .inosuke_detalhes {
   @include fundo-personagem-detalhes("https://images3.alphacoders.com/126/thumb-1920-1269680.jpg");
+}
+
+// Hashiras
+
+.rengoku_detalhes {
+  @include fundo-personagem-detalhes("https://www.hdwallpapers.in/download/kyojuro_rengoku_fire_background_hd_demon_slayer_kimetsu_no_yaiba-1920x1080.jpg");
+}
+
+.uzui_detalhes {
+  @include fundo-personagem-detalhes("https://www.hdwallpapers.in/download/tengen_uzui_kimetsu_no_yaiba_hd_demon_slayer_kimetsu_no_yaiba-1920x1080.jpg");
+}
+
+.tomioka_detalhes {
+  @include fundo-personagem-detalhes("https://i.pinimg.com/1200x/86/68/29/8668299b796407d98f19ee2b12562b1f.jpg");
+}
+
+.tokito_detalhes {
+  @include fundo-personagem-detalhes("https://i.pinimg.com/1200x/a7/7a/4a/a77a4a6cfbd14df8ced66c7b4b04f5be.jpg");
+
+  .container_main__imagem_personagem img {
+    height: 62vh;
+  }
 }
 
 .personagem_detalhes {
@@ -98,9 +121,29 @@
   background: linear-gradient(135deg, #6B8E23, #3E2723);
 }
 
+.respiracao_chamas {
+  background: linear-gradient(180deg, #FF4500, #FF8C00);
+}
+
+.respiracao_som {
+  background: linear-gradient(135deg, #8B00FF, #FFD700);
+}
+
+.respiracao_nevoa {
+  background: linear-gradient(135deg, rgb(166 166 166 / 50%), rgb(211 211 211 / 50%));
+}
+
 @media (width <= 768px) {
   .zenitsu_detalhes {
     @include fundo-personagem-detalhes("https://i.pinimg.com/1200x/d6/92/d9/d692d919d91cb4181cf123ad3b7458e8.jpg",rgba(0, 0, 0, 0.6), $position: left);
+  }
+
+  .tokito_detalhes {
+    @include fundo-personagem-detalhes("https://i.pinimg.com/736x/36/cb/de/36cbde02a4cdbd09049d791be98265cd.jpg", rgba(0, 0, 0, 0.6), $position: center);
+
+    .container_main__imagem_personagem img {
+      height: 26vh;
+    } 
   }
 
   .container_main {
