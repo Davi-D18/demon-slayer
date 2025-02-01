@@ -15,6 +15,8 @@ export const Home = () => {
 
   let personagensSerRenderizado = modPersonagem ? hashiras : personagens
 
+  const larguraTela = window.innerWidth
+
   // Adiciona os elementos à referência
   const setCardRef = (el) => {
     if (el) {
@@ -89,7 +91,14 @@ export const Home = () => {
           {modPersonagem ? 'Hashiras' : 'Personagens'}
         </h1>
 
-        <section className={S.container_main__characters} ref={containerRef}>
+        <section
+          className={
+            modPersonagem
+              ? S.container_main__characters_hashiras
+              : S.container_main__characters
+          }
+          ref={containerRef}
+        >
           {personagensSerRenderizado.map((personagem) => (
             <Link key={personagem.id} to={`/personagem/${personagem.id}`}>
               <article
@@ -108,18 +117,46 @@ export const Home = () => {
           ))}
         </section>
 
-        <section className={S.container_buttons}>
-          <div className={S.container_buttons_controles}>
-            <button onClick={scrollLeft} className={S.button_hashira}>
-              <img src={iconHashira} alt="Icone" />
-              <p>Anterior</p>
-            </button>
+        <section
+          className={
+            modPersonagem
+              ? S.container_buttons + ' ' + S.active
+              : S.container_buttons
+          }
+        >
+          {larguraTela <= 800 ? (
+            <div
+              className={S.container_buttons_controles}
+              style={{ display: 'flex' }}
+            >
+              <button onClick={scrollLeft} className={S.button_hashira}>
+                <img src={iconHashira} alt="Icone" />
+                <p>Anterior</p>
+              </button>
 
-            <button onClick={scrollRight} className={S.button_hashira}>
-              <p>Próximo</p>
-              <img src={iconHashira} alt="Icone" />
-            </button>
-          </div>
+              <button onClick={scrollRight} className={S.button_hashira}>
+                <p>Próximo</p>
+                <img src={iconHashira} alt="Icone" />
+              </button>
+            </div>
+          ) : (
+            modPersonagem && (
+              <div
+                className={S.container_buttons_controles}
+                style={{ display: 'flex' }}
+              >
+                <button onClick={scrollLeft} className={S.button_hashira}>
+                  <img src={iconHashira} alt="Icone" />
+                  <p>Anterior</p>
+                </button>
+
+                <button onClick={scrollRight} className={S.button_hashira}>
+                  <p>Próximo</p>
+                  <img src={iconHashira} alt="Icone" />
+                </button>
+              </div>
+            )
+          )}
 
           <div className={S.container_button_hashira}>
             <button className={S.button_hashira} onClick={handleChange}>

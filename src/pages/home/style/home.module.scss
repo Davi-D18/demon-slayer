@@ -14,19 +14,32 @@
   }
 }
 
-.container_main__characters {
+.container_main__characters, .container_main__characters_hashiras {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   width: 90vw;
   margin: 3rem auto;
+  padding: 1rem 0;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.container_main__characters_hashiras {
+  gap: 3.5rem;
+  padding-left: 5px;
 }
 
 article {
-  width: 25rem;
+  width: 24rem;
   border-radius: 22px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  opacity: 0.6;
+  filter: blur(6px);
 
   &:hover {
     transform: scale(1.05);
@@ -51,6 +64,11 @@ article {
     border-radius: 20px;
     object-fit: cover;
   }
+}
+
+article.visible { 
+  opacity: 1;
+  filter: blur(0); 
 }
 
 .container_button_hashira {
@@ -86,6 +104,21 @@ article {
   display: none;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
+
+  button:nth-child(1) {
+    img {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.container_buttons.active {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 2rem 0;
 }
 
 // Classes de Personagens
@@ -138,6 +171,26 @@ article {
   }
 }
 
+.fundo_gyomei {
+  @include fundo-personagem($gyomei);
+}
+
+.fundo_sanemi {
+  @include fundo-personagem($sanemi);
+}
+
+.fundo_shinobu {
+  @include fundo-personagem($shinobu);
+}
+
+.fundo_mitsuri {
+  @include fundo-personagem($mitsuri);
+}
+
+.fundo_obanai {
+  @include fundo-personagem($obanai);
+}
+
 @media (width >= 801px) and (width <= 1094px) {
   article {
     width: 19rem;
@@ -152,40 +205,41 @@ article {
     }
 
     .container_main__characters {
-      overflow-x: scroll;
       gap: 2rem;
+      padding-left: 5px;
 
       article {
         width: 22rem;
-        transition: all 0.3s ease-in-out;
-        opacity: 0.6;
-        filter: blur(6px);
 
         &:hover {
           transform: scale(1);
         }
       }
+    }
 
-      article.visible { 
-        opacity: 1;
-        filter: blur(0); 
-      }
+    .container_buttons {
+      button {
+        padding: 1rem;
 
-      &::-webkit-scrollbar {
-        display: none;
+        img {
+          width: 3.7rem;
+        }
       }
     }
   }
 
-  .container_buttons_controles {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
+  .container_buttons.active {
+    justify-content: flex-end;
+    
+    .container_buttons_controles {
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+  }
 
-    button:nth-child(1) {
-      img {
-        transform: rotate(180deg);
-      }
+  .container_buttons {
+    .container_buttons_controles {
+      margin-bottom: 2rem;
     }
   }
 
@@ -200,10 +254,6 @@ article {
     &:active {
       transform: scale(0.8);
     }
-  }
-
-  .container_button_hashira {
-    justify-content: center;
   }
 }
 

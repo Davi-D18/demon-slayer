@@ -37,6 +37,26 @@
   }
 }
 
+.gyomei_detalhes {
+  @include fundo-personagem-detalhes("https://images4.alphacoders.com/136/thumb-1920-1368150.jpeg");
+}
+
+.sanemi_detalhes {
+  @include fundo-personagem-detalhes("https://4.bp.blogspot.com/-XatavJYIM3o/XZJsRTgHBGI/AAAAAAAAOl8/AZtZTx9P32MMWsDj5sQS9UhvljEdZYe0QCLcBGAsYHQ/w919/sanemi-shinazugawa-kimetsu-no-yaiba-wind-pillar-uhdpaper.com-4K-5.1089-wp.thumbnail.jpg");
+}
+
+.shinobu_detalhes {
+  @include fundo-personagem-detalhes("https://wallpapers.com/images/hd/shinobu-kocho-and-wisteria-lpvk6bctw08mq0eq.jpg");
+}
+
+.mitsuri_detalhes {
+  @include fundo-personagem-detalhes("https://i.pinimg.com/originals/28/28/f4/2828f4c3899aacbd54877f300593ded0.jpg");
+}
+
+.obanai_detalhes {
+  @include fundo-personagem-detalhes("https://images4.alphacoders.com/136/thumb-1920-1368087.png", rgba(0, 0, 0, 0.6));
+}
+
 .personagem_detalhes {
   height: 100dvh;
 }
@@ -133,6 +153,26 @@
   background: linear-gradient(135deg, rgb(166 166 166 / 50%), rgb(211 211 211 / 50%));
 }
 
+.respiracao_pedra {
+  background: linear-gradient(180deg, #6D6D6D, #3B3B3B);
+}
+
+.respiracao_amor {
+  background: linear-gradient(180deg, #FF80B0, #D1477C);
+}
+
+.respiracao_serpente {
+  background: linear-gradient(180deg, #737373, #2E2E2E);
+}
+
+.respiracao_vento {
+  background: linear-gradient(180deg, #66BB6A, #2E7D32);
+}
+
+.respiracao_inseto {
+  background: linear-gradient(180deg, #9C27B0, #6A1B9A);
+}
+
 @media (width <= 768px) {
   .zenitsu_detalhes {
     @include fundo-personagem-detalhes("https://i.pinimg.com/1200x/d6/92/d9/d692d919d91cb4181cf123ad3b7458e8.jpg",rgba(0, 0, 0, 0.6), $position: left);
@@ -144,6 +184,10 @@
     .container_main__imagem_personagem img {
       height: 26vh;
     } 
+  }
+
+  .shinobu_detalhes {
+    @include fundo-personagem-detalhes("https://i.pinimg.com/1200x/4f/6a/bd/4f6abd8612c424150f312879fed8ef3f.jpg");
   }
 
   .container_main {

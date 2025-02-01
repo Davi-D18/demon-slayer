@@ -52,7 +52,9 @@ export const PersonagemDetalhes = () => {
 
         <section className={S.container_main__imagem_personagem}>
           <img
-            src={personagem.galeria[2]}
+            src={
+              personagem.id > 8 ? personagem.galeria[0] : personagem.galeria[2]
+            }
             alt={`Personagem ${personagem.nome}`}
           />
         </section>

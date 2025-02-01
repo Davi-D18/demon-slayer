@@ -20,6 +20,11 @@ $rengoku: linear-gradient(180deg, #D42828 0%, #eb1919b7 25%), url("@public/hashi
 $uzui: linear-gradient(180deg, #41556A 0%, #000 100%), url("@public/hashiras/uzui/uzui-fundo.png") top / cover;
 $tomioka: linear-gradient(180deg, #0243EC 0%, #000 100%), url("@public/hashiras/tomioka/tomioka-fundo.png") top / cover;
 $tokito: linear-gradient(180deg, #22C6B4 0%, #001311 100%), url("@public/hashiras/tokito/tokito-fundo.png") top / cover;
+$gyomei: linear-gradient(180deg, #5A5A5A 0%, #2E2E2E 100%), url("@public/hashiras/gyomei/gyomei-fundo.png") bottom / cover; // Cinza escuro para pedra
+$sanemi: linear-gradient(180deg, #4CAF50 0%, #0C3B0C 100%), url("@public/hashiras/sanemi/sanemi-fundo.png") bottom / cover; // Verde intenso para vento
+$shinobu: linear-gradient(180deg, #A043A0 0%, #3B103B 100%), url("@public/hashiras/shinobu/shinobu-fundo.png") bottom / cover; // Roxo para veneno/inseto
+$mitsuri: linear-gradient(180deg, #F69 0%, #73264D 100%), url("@public/hashiras/mitsuri/mitsuri-fundo.png") bottom / cover; // Rosa para amor
+$obanai: linear-gradient(180deg, #3B3B3B 0%, #000 100%), url("@public/hashiras/obanai/obanai-fundo.png") bottom / cover; // Preto/cinza para serpente
 
 // Mixins
 @mixin fundo-personagem($personagem) {
