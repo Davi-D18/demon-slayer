@@ -111,6 +111,33 @@ article {
   @include fundo-personagem($inosuke);
 }
 
+// Classes de Hashiras
+
+.fundo_rengoku {
+  @include fundo-personagem($rengoku);
+}
+
+.fundo_uzui {
+  @include fundo-personagem($uzui);
+
+  img {
+    width: 70%;
+    height: 300px
+  }
+}
+
+.fundo_tomioka {
+  @include fundo-personagem($tomioka);
+}
+
+.fundo_tokito {
+  @include fundo-personagem($tokito);
+
+  img {
+    width: 46%;
+  }
+}
+
 @media (width >= 801px) and (width <= 1094px) {
   article {
     width: 19rem;
@@ -169,4 +196,31 @@ article {
   .container_button_hashira {
     justify-content: center;
   }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    transform: scale(0.2) translateY(-20px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.2) translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.fade_out {
+  animation: fade-out 0.5s forwards;
+}
+
+.fade_in {
+  animation: fade-in 0.5s ease-in-out;
 }

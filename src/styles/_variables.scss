@@ -15,6 +15,12 @@ $nezuko: linear-gradient(180deg, #FF4D97 0%, #321E00 100%), url("@public/persona
 $zenitsu: linear-gradient(180deg, #FFB300 0%, #321E00 100%), url("@public/personagens/zenitsu/zenitsu-fundo.png") top / cover;
 $inosuke: linear-gradient(180deg, #D3A478 0%, #321E00 100%), url("@public/personagens/inosuke/inosuke-fundo.png") bottom;
 
+// Estilos Hashiras
+$rengoku: linear-gradient(180deg, #D42828 0%, #eb1919b7 25%), url("@public/hashiras/rengoku/rengoku-fundo.png") top / cover;
+$uzui: linear-gradient(180deg, #41556A 0%, #000 100%), url("@public/hashiras/uzui/uzui-fundo.png") top / cover;
+$tomioka: linear-gradient(180deg, #0243EC 0%, #000 100%), url("@public/hashiras/tomioka/tomioka-fundo.png") top / cover;
+$tokito: linear-gradient(180deg, #22C6B4 0%, #001311 100%), url("@public/hashiras/tokito/tokito-fundo.png") top / cover;
+
 // Mixins
 @mixin fundo-personagem($personagem) {
   background: $personagem;

@@ -1,57 +1,59 @@
 import { Header } from '@c/Header/Header'
 import iconHashira from '@public/icons/seta-direita.png'
 import { personagens } from '@src/data/personagens.js'
-import { useEffect, useRef } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { hashiras } from '../../data/hashiras'
 import S from './style/home.module.scss'
 
 export const Home = () => {
   const containerRef = useRef(null) // Referência para o container dos cards
   const cardsRef = useRef([])
+  const [fadingOut, setFadingOut] = useState(false)
+  const [modPersonagem, setModPersonagem] = useState(false)
+  const [animating, setAnimating] = useState(false)
 
-  const navigate = useNavigate()
-
-  const redirecionar = () => {
-    navigate('/emBreve')
-  }
+  let personagensSerRenderizado = modPersonagem ? hashiras : personagens
 
   // Adiciona os elementos à referência
   const setCardRef = (el) => {
-    if (el && !cardsRef.current.includes(el)) {
-      cardsRef.current.push(el)
+    if (el) {
+      el.classList.remove(S.visible) // Garante que começa com blur
+      if (!cardsRef.current.includes(el)) {
+        cardsRef.current.push(el)
+      }
     }
   }
 
   useEffect(() => {
+    console.log(cardsRef.current)
+    if (!cardsRef.current.length) return
+
     const cards = cardsRef.current
 
     const observer = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add(S.visible) // Remove o blur quando o card entrar na tela
-            observer.unobserve(entry.target) // Para de observar o card após ele entrar
+            entry.target.classList.add(S.visible)
+            observer.unobserve(entry.target)
           }
         })
       },
       { threshold: 0.7 }
     )
 
-    cards.forEach((card) => {
-      observer.observe(card)
-    })
+    cards.forEach((card) => observer.observe(card))
 
     return () => {
-      cards.forEach((card) => {
-        observer.unobserve(card) // Limpa a observação ao desmontar o componente
-      })
+      cards.forEach((card) => observer.unobserve(card))
     }
-  }, [])
+  }, [modPersonagem])
 
   const scrollLeft = () => {
     if (containerRef.current) {
       containerRef.current.scrollBy({
-        left: -250, // Ajuste conforme necessário para mover a quantidade certa de cards
+        left: -250, // Quantidade de pixels para mover
         behavior: 'smooth' // Suaviza a rolagem
       })
     }
@@ -60,10 +62,23 @@ export const Home = () => {
   const scrollRight = () => {
     if (containerRef.current) {
       containerRef.current.scrollBy({
-        left: 250, // Ajuste conforme necessário para mover a quantidade certa de cards
+        left: 250, // Quantidade de pixels para mover
         behavior: 'smooth' // Suaviza a rolagem
       })
     }
+  }
+
+  const handleChange = () => {
+    if (animating) return
+
+    setAnimating(true)
+    setFadingOut(true)
+
+    setTimeout(() => {
+      setModPersonagem((prev) => !prev)
+      setFadingOut(false)
+      setAnimating(false)
+    }, 510)
   }
 
   return (
@@ -71,12 +86,17 @@ export const Home = () => {
       <Header paginaAtual="inicio" />
 
       <div className={S.container_main}>
-        <h1 className={S.title}>Personagens</h1>
+        <h1 className={S.title}>
+          {modPersonagem ? 'Hashiras' : 'Personagens'}
+        </h1>
 
         <section className={S.container_main__characters} ref={containerRef}>
-          {personagens.map((personagem) => (
+          {personagensSerRenderizado.map((personagem) => (
             <Link key={personagem.id} to={`/personagem/${personagem.id}`}>
-              <article className={S[personagem.classes[0]]} ref={setCardRef}>
+              <article
+                className={`${S[personagem.classes[0]]} ${fadingOut ? S.fade_out : S.fade_in}`}
+                ref={setCardRef}
+              >
                 <h2>{personagem.nome}</h2>
                 <div className={S.container_img}>
                   <img
@@ -103,8 +123,8 @@ export const Home = () => {
           </div>
 
           <div className={S.container_button_hashira}>
-            <button className={S.button_hashira} onClick={redirecionar}>
-              <p>Hashiras</p>
+            <button className={S.button_hashira} onClick={handleChange}>
+              <p>{modPersonagem ? 'Personagens' : 'Hashiras'}</p>
               <img src={iconHashira} alt="Icone" />
             </button>
           </div>
