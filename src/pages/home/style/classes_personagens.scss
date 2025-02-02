@@ -1,0 +1,70 @@
+@use "@src/styles/_variables.scss" as *;
+
+// Classes de Personagens
+.fundo_tanjiro {
+  @include fundo-personagem($tanjiro);
+}
+
+.fundo_nezuko {
+  @include fundo-personagem($nezuko);
+
+  .container_img img {
+    height: 300px;
+    margin-top: 1.2rem
+  }
+}
+
+.fundo_zenitsu {
+  @include fundo-personagem($zenitsu);
+}
+
+.fundo_inosuke {
+  @include fundo-personagem($inosuke);
+}
+
+// Classes de Hashiras
+
+.fundo_rengoku {
+  @include fundo-personagem($rengoku);
+}
+
+.fundo_uzui {
+  @include fundo-personagem($uzui);
+
+  img {
+    width: 70%;
+    height: 300px
+  }
+}
+
+.fundo_tomioka {
+  @include fundo-personagem($tomioka);
+}
+
+.fundo_tokito {
+  @include fundo-personagem($tokito);
+
+  img {
+    width: 46%;
+  }
+}
+
+.fundo_gyomei {
+  @include fundo-personagem($gyomei);
+}
+
+.fundo_sanemi {
+  @include fundo-personagem($sanemi);
+}
+
+.fundo_shinobu {
+  @include fundo-personagem($shinobu);
+}
+
+.fundo_mitsuri {
+  @include fundo-personagem($mitsuri);
+}
+
+.fundo_obanai {
+  @include fundo-personagem($obanai);
+}
