@@ -67,12 +67,14 @@ export const Header = ({ paginaAtual }) => {
         <source src={audio} type="audio/mp3" />
       </audio>
 
-      <div className={S.mensagem} ref={mensagem}>
-        <p>Parabéns, você descobriu um Easter egg</p>
-        <img
-          src="https://i.pinimg.com/236x/3b/6c/2a/3b6c2a4460e1a74ddc1c12be9eb745ae.jpg"
-          alt="Icone"
-        />
+      <div className={S.container_mensagem}>
+        <div className={S.mensagem} ref={mensagem}>
+          <p>Parabéns, você descobriu um Easter egg</p>
+          <img
+            src="https://i.pinimg.com/236x/3b/6c/2a/3b6c2a4460e1a74ddc1c12be9eb745ae.jpg"
+            alt="Icone"
+          />
+        </div>
       </div>
 
       <div className={S.container_header}>
