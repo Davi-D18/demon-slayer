@@ -1,12 +1,12 @@
+import S from './style/header.module.scss'
+
 import PropTypes from 'prop-types'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import S from './style/header.module.scss'
 
 import EllipseLaranja from '@public/icons/Ellipse.png'
 import EllipseVerde from '@public/icons/EllipseVerde.png'
 import logo from '@public/logo/logo.png'
-
 import audio from '@src/audio/music-demon-slayer.mp3'
 
 export const Header = ({ paginaAtual }) => {

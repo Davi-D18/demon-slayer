@@ -1,8 +1,11 @@
+import S from './style/personagemDetalhes.module.scss'
+
+import { useParams } from 'react-router-dom'
+
 import { Header } from '@c/Header/Header'
+
 import { hashiras } from '@src/data/hashiras.js'
 import { personagens } from '@src/data/personagens.js'
-import { useParams } from 'react-router-dom'
-import S from './style/personagemDetalhes.module.scss'
 
 export const PersonagemDetalhes = () => {
   const { id } = useParams() // Obtém o ID da URL

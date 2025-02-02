@@ -1,10 +1,14 @@
-import { Header } from '@c/Header/Header'
-import iconHashira from '@public/icons/seta-direita.png'
-import { personagens } from '@src/data/personagens.js'
+import S from './style/home.module.scss'
+
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { hashiras } from '../../data/hashiras'
-import S from './style/home.module.scss'
+
+import { Header } from '@c/Header/Header'
+
+import { hashiras } from '@src/data/hashiras.js'
+import { personagens } from '@src/data/personagens.js'
+
+import iconHashira from '@public/icons/seta-direita.png'
 
 export const Home = () => {
   const containerRef = useRef(null) // Referência para o container dos cards
