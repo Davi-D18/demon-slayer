@@ -6,6 +6,7 @@ import { Header } from '@c/Header/Header'
 
 import { hashiras } from '@src/data/hashiras.js'
 import { personagens } from '@src/data/personagens.js'
+import { PersonagemNaoEncontrado } from '../../components/PersonagemNaoEncontrado/PersonagemNaoEncontrado'
 
 export const PersonagemDetalhes = () => {
   const { id } = useParams() // Obtém o ID da URL
@@ -13,7 +14,7 @@ export const PersonagemDetalhes = () => {
   const personagem = dados.find((personagem) => personagem.id == id)
 
   if (!personagem) {
-    return <h1>Personagem não encontrado</h1>
+    return <PersonagemNaoEncontrado />
   }
 
   const getTituloRespiracao = (personagem) => {
