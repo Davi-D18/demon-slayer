@@ -6,18 +6,26 @@ import { Link } from 'react-router-dom'
 import { Header } from '@c/Header/Header'
 
 import { hashiras } from '@src/data/hashiras.js'
+// import { Onis } from '@src/data/onis.js'
 import { personagens } from '@src/data/personagens.js'
 
-import iconHashira from '@public/icons/seta-direita.png'
+import iconOni from '@public/icons/IconMuzan.png'
+import IconSeta from '@public/icons/seta-direita.png'
+import IconHashira from '@public/icons/slayer.svg'
 
 export const Home = () => {
   const containerRef = useRef(null) // Referência para o container dos cards
   const cardsRef = useRef([])
+
   const [fadingOut, setFadingOut] = useState(false)
   const [modPersonagem, setModPersonagem] = useState(false)
+  const [modOni, setModOni] = useState(false)
   const [animating, setAnimating] = useState(false)
+  const [tooltipVisible, setTooltipVisible] = useState(false)
 
-  let personagensSerRenderizado = modPersonagem ? hashiras : personagens
+  let personagensSerRenderizado = /*modOni
+    ? Onis
+    :*/ modPersonagem ? hashiras : personagens
 
   const larguraTela = window.innerWidth
 
@@ -86,14 +94,61 @@ export const Home = () => {
     }, 510)
   }
 
+  const handleToggleOni = () => {
+    if (animating) return
+
+    setAnimating(true)
+    setFadingOut(true)
+
+    setTimeout(() => {
+      setModOni((prev) => !prev)
+      setFadingOut(false)
+      setAnimating(false)
+    }, 510)
+  }
+
+  const handleTooltipToggle = () => {
+    setTooltipVisible(!tooltipVisible)
+  }
+
   return (
-    <main className={S.inicio}>
+    <main className={S.inicio + ' ' + S[modOni ? 'onis' : 'cacadores']}>
       <Header paginaAtual="inicio" />
 
       <div className={S.container_main}>
-        <h1 className={S.title}>
-          {modPersonagem ? 'Hashiras' : 'Personagens'}
-        </h1>
+        <div className={S.header_section}>
+          <h1
+            className={
+              modOni
+                ? `${S.title} ${S.oni}`
+                : modPersonagem
+                  ? `${S.title} ${S.hashiras}`
+                  : S.title
+            }
+          >
+            {(modOni || modPersonagem) && (
+              <span
+                className={S.icon_wrapper}
+                onMouseEnter={handleTooltipToggle}
+                onMouseLeave={handleTooltipToggle}
+              >
+                <img src={modOni ? iconOni : IconHashira} alt="Ícone" />
+                {tooltipVisible && (
+                  <span className={S.tooltip}>
+                    {modOni
+                      ? 'Os Kizukis são os demônios mais poderosos servindo a Muzan Kibutsuji'
+                      : 'Hashiras são os espadachins de elite do Corpo de Caçadores de Demônios'}
+                  </span>
+                )}
+              </span>
+            )}
+            {modOni ? '12 Kizukis' : modPersonagem ? 'Hashiras' : 'Personagens'}
+          </h1>
+
+          <button className={S.button_oni} onClick={handleToggleOni}>
+            {modOni ? 'Ver Caçadores' : 'Ver Onis'}
+          </button>
+        </div>
 
         <section
           className={
@@ -134,13 +189,13 @@ export const Home = () => {
               style={{ display: 'flex' }}
             >
               <button onClick={scrollLeft} className={S.button_hashira}>
-                <img src={iconHashira} alt="Icone" />
+                <img src={IconSeta} alt="Icone" />
                 <p>Anterior</p>
               </button>
 
               <button onClick={scrollRight} className={S.button_hashira}>
                 <p>Próximo</p>
-                <img src={iconHashira} alt="Icone" />
+                <img src={IconSeta} alt="Icone" />
               </button>
             </div>
           ) : (
@@ -150,24 +205,43 @@ export const Home = () => {
                 style={{ display: 'flex' }}
               >
                 <button onClick={scrollLeft} className={S.button_hashira}>
-                  <img src={iconHashira} alt="Icone" />
+                  <img src={IconSeta} alt="Icone" />
                   <p>Anterior</p>
                 </button>
 
                 <button onClick={scrollRight} className={S.button_hashira}>
                   <p>Próximo</p>
-                  <img src={iconHashira} alt="Icone" />
+                  <img src={IconSeta} alt="Icone" />
                 </button>
               </div>
             )
           )}
 
-          <div className={S.container_button_hashira}>
-            <button className={S.button_hashira} onClick={handleChange}>
-              <p>{modPersonagem ? 'Personagens' : 'Hashiras'}</p>
-              <img src={iconHashira} alt="Icone" />
-            </button>
-          </div>
+          {modOni && (
+            <div
+              className={S.container_buttons_controles}
+              style={{ display: 'flex' }}
+            >
+              <button onClick={scrollLeft} className={S.button_hashira}>
+                <img src={IconSeta} alt="Icone" />
+                <p>Anterior</p>
+              </button>
+
+              <button onClick={scrollRight} className={S.button_hashira}>
+                <p>Próximo</p>
+                <img src={IconSeta} alt="Icone" />
+              </button>
+            </div>
+          )}
+
+          {!modOni && (
+            <div className={S.container_button_hashira}>
+              <button className={S.button_hashira} onClick={handleChange}>
+                <p>{modPersonagem ? 'Personagens' : 'Hashiras'}</p>
+                <img src={IconSeta} alt="Icone" />
+              </button>
+            </div>
+          )}
         </section>
       </div>
     </main>
