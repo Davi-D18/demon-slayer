@@ -4,14 +4,15 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Header } from '@c/Header/Header'
+import { Tooltip } from '@c/Tooltip/Tooltip'
 
 import { hashiras } from '@src/data/hashiras.js'
 // import { Onis } from '@src/data/onis.js'
 import { personagens } from '@src/data/personagens.js'
 
-import iconOni from '@public/icons/IconMuzan.png'
+// import iconOni from '@public/icons/IconMuzan.png'
 import IconSeta from '@public/icons/seta-direita.png'
-import IconHashira from '@public/icons/slayer.svg'
+// import IconHashira from '@public/icons/slayer.svg'
 
 export const Home = () => {
   const containerRef = useRef(null) // Referência para o container dos cards
@@ -21,7 +22,6 @@ export const Home = () => {
   const [modPersonagem, setModPersonagem] = useState(false)
   const [modOni, setModOni] = useState(false)
   const [animating, setAnimating] = useState(false)
-  const [tooltipVisible, setTooltipVisible] = useState(false)
 
   let personagensSerRenderizado = /*modOni
     ? Onis
@@ -107,10 +107,6 @@ export const Home = () => {
     }, 510)
   }
 
-  const handleTooltipToggle = () => {
-    setTooltipVisible(!tooltipVisible)
-  }
-
   return (
     <main className={S.inicio + ' ' + S[modOni ? 'onis' : 'cacadores']}>
       <Header paginaAtual="inicio" />
@@ -126,22 +122,14 @@ export const Home = () => {
                   : S.title
             }
           >
-            {(modOni || modPersonagem) && (
-              <span
-                className={S.icon_wrapper}
-                onMouseEnter={handleTooltipToggle}
-                onMouseLeave={handleTooltipToggle}
-              >
-                <img src={modOni ? iconOni : IconHashira} alt="Ícone" />
-                {tooltipVisible && (
-                  <span className={S.tooltip}>
-                    {modOni
-                      ? 'Os Kizukis são os demônios mais poderosos servindo a Muzan Kibutsuji'
-                      : 'Hashiras são os espadachins de elite do Corpo de Caçadores de Demônios'}
-                  </span>
-                )}
-              </span>
+            {modOni ? (
+              <Tooltip booleanOniHashira={true} />
+            ) : modPersonagem ? (
+              <Tooltip booleanOniHashira={false} />
+            ) : (
+              ''
             )}
+
             {modOni ? '12 Kizukis' : modPersonagem ? 'Hashiras' : 'Personagens'}
           </h1>
 

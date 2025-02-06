@@ -68,3 +68,11 @@
 .fundo_obanai {
   @include fundo-personagem($obanai);
 }
+
+@media (width <= 768px) {
+  .container_main__characters .fundo_nezuko {
+    .container_img img {
+      height: 280px;
+    }
+  }
+}
