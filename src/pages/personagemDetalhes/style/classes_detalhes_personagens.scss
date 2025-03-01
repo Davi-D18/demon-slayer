@@ -59,6 +59,76 @@
   @include fundo-personagem-detalhes("https://images4.alphacoders.com/136/thumb-1920-1368087.png", rgba(0, 0, 0, 0.6));
 }
 
+// Onis
+
+// Luas superiores
+
+.kokushibo_detalhes {
+  @include fundo-personagem-detalhes("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.xtrafondos.com%2Fwallpapers%2Fkokushibo-de-kimetsu-no-yaiba-12060.jpg&f=1&nofb=1&ipt=66f0a55292066e4e5e1844549caa769639a5a034b538252a14978861bb5cc9fc&ipo=images");
+}
+
+.doma_detalhes {
+  @include fundo-personagem-detalhes("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages8.alphacoders.com%2F132%2Fthumb-1920-1321460.png&f=1&nofb=1&ipt=9cfb04ca8c534b768acfc8e2c7b655ac180a748ae93408cfb18d797ffc41303a&ipo=images");
+}
+
+.akaza_detalhes {
+  @include fundo-personagem-detalhes("https://images3.alphacoders.com/132/thumb-1920-1321230.png", rgba(0, 0, 0, 0.5));
+}
+
+.hantengu_detalhes {
+  @include fundo-personagem-detalhes("https://i.pinimg.com/1200x/82/e6/40/82e64079b48fc9e4cdb01b3944419c39.jpg");
+}
+
+.gyokko_detalhes {
+  @include fundo-personagem-detalhes("https://images3.alphacoders.com/131/1319718.png");
+}
+
+.daki_detalhes {
+  @include fundo-personagem-detalhes("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.uhdpaper.com%2Fwallpaper%2Fdaki-upper-moon-demon-slayer-878%401%40e-pc-hd.jpg&f=1&nofb=1&ipt=890087d39e3070e3b57b1dd3895d92542ba8b9b94aacd4130d86ea884cd187f3&ipo=images", rgba(0, 0, 0, 0.5));
+}
+
+.gyutaro_detalhes {
+  @include fundo-personagem-detalhes("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F8809221.jpg&f=1&nofb=1&ipt=8ee9be8ebba8bf28097875e62491693bc05667a08c8780d48cf1687459a911eb&ipo=images", rgba(0, 0, 0, 0.5));
+}
+
+.nakime_detalhes {
+  @include fundo-personagem-detalhes("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp12692856.jpg&f=1&nofb=1&ipt=70daf6fa717aae9b9d49dcb38d82035c6ad3f8108943732d2b96c29746f64d67&ipo=images", rgba(0, 0, 0, 0.5));
+}
+
+.kaigaku_detalhes {
+  @include fundo-personagem-detalhes("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fotakukart.com%2Fwp-content%2Fuploads%2F2022%2F01%2FKaigaku-in-Demon-Slayer.jpg&f=1&nofb=1&ipt=9c2c4b19a53b27b8b367b11accc6d6532c652f079963e792217dbbafc83a731d&ipo=images");
+}
+
+// Luas inferiores
+
+.enmu_detalhes {
+  @include fundo-personagem-detalhes("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F8284082.jpg&f=1&nofb=1&ipt=504f19934e5b990a8db3a78df217616d6496b13128c4b9368ddf57485beb44a4&ipo=images");
+}
+
+.rokuro_detalhes {
+  @include fundo-personagem-detalhes("https://i.pinimg.com/1200x/49/05/9d/49059decea8a1b2386ff08dbb5f7c5f5.jpg");
+}
+
+.wakuraba_detalhes {
+  @include fundo-personagem-detalhes("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.wikia.nocookie.net%2Fkimetsu-no-yaiba%2Fimages%2F3%2F35%2FWakuraba_called_in_the_Dimentional_Infinity_Fortress-1-.png%2Frevision%2Flatest%2Fscale-to-width-down%2F1200%3Fcb%3D20200722230214%26path-prefix%3Dfr&f=1&nofb=1&ipt=d86c92674eef062745798b2123a39a03ac5e77cc713fbe82fa8b0847042750db&ipo=images");
+}
+
+.mukago_detalhes {
+  @include fundo-personagem-detalhes("https://pm1.narvii.com/7742/32ec7ec1e15e5996201d8bcbd5c5add109640cc9r1-1920-1080v2_hq.jpg", rgba(0, 0, 0, 0.5));
+}
+
+.rui_detalhes {
+  @include fundo-personagem-detalhes("https://wallpaperaccess.com/full/4927693.png");
+}
+
+.kamanue_detalhes {
+  @include fundo-personagem-detalhes("https://i.pinimg.com/736x/ac/79/07/ac79072cc54980fe896396141198d108.jpg", rgba(0, 0, 0, 0.5));
+}
+
+.kyogai_detalhes {
+  @include fundo-personagem-detalhes("https://vignette.wikia.nocookie.net/demonslayer-anime/images/d/db/Kyogai.png/revision/latest?cb=20190816171433", rgba(0, 0, 0, 0.3));
+}
+
 /* ------------------------------------- */
 
 // Estilos respirações
@@ -113,6 +183,75 @@
 
 .respiracao_inseto {
   background: linear-gradient(180deg, #9C27B0, #6A1B9A);
+}
+
+// Estilos kekijjutsus
+
+// Luas superiores
+.respiracao_da_lua {
+  background: linear-gradient(180deg, #1a237e, #90a4ae);
+}
+
+.criocionese_das_ondas_gelidas {
+  background: linear-gradient(180deg, #00e5ffa1, #81d4faa6);
+}
+
+.morte_destrutiva {
+  background: linear-gradient(180deg, #b71c1c, #212121);
+}
+
+.manifestacao_das_quatro_mascaras_emocionais {
+  background: linear-gradient(180deg, #61198dd0, #621ab9);
+}
+
+.ceramina_viva {
+  background: linear-gradient(180deg, #ebeaea88, #9e9e9ec4);
+}
+
+.manipulacao_da_faixa_obi {
+  background: linear-gradient(180deg, #ff80ab, #f50057);
+}
+
+.manipulacao_de_sangue_venenoso {
+  background: linear-gradient(180deg, #b71c1c, #4a148c);
+}
+
+.eletrocinese_do_trovao_celestial {
+  background: linear-gradient(180deg, #00e676, #00b0ff);
+}
+
+.dimensao_do_castelo_infinito {
+  background: linear-gradient(180deg, #4a148c, #000);
+}
+
+// Luas inferiores
+
+.manipulacao_dos_sonhos {
+  background: linear-gradient(180deg, #8E44AD, #3498DB);
+}
+
+.impacto_cinetico {
+  background: linear-gradient(135deg, #FF4500, #FFD700);
+}
+
+.velocidade_extrema {
+  background: linear-gradient(180deg, #1ABC9C, #16A085);
+}
+
+.evasao_sombria {
+  background: linear-gradient(180deg, #2C3E50, #95A5A6);
+}
+
+.manipulacao_de_fios {
+  background: linear-gradient(135deg, #D35400, #E74C3C);
+}
+
+.potencia_amplificada {
+  background: linear-gradient(180deg, #E67E22, #F1C40F);
+}
+
+.manipulacao_dos_tambores {
+  background: linear-gradient(180deg, #8E44AD, #C0392B);
 }
 
 @media (width <= 768px) {

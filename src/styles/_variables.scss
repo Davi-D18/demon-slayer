@@ -28,6 +28,72 @@ $shinobu: linear-gradient(180deg, #A043A0 0%, #3B103B 100%), url("@public/hashir
 $mitsuri: linear-gradient(180deg, #F69 0%, #73264D 100%), url("@public/hashiras/mitsuri/mitsuri-fundo.png") bottom / cover; // Rosa para amor
 $obanai: linear-gradient(180deg, #3B3B3B 0%, #000 100%), url("@public/hashiras/obanai/obanai-fundo.png") bottom / cover; // Preto/cinza para serpente
 
+// Estilos Onis
+$kokushibo: linear-gradient(180deg, #2E3A59 0%, #A6B1E1 100%), url("@public/onis/kokushibo/kokushibo-fundo.png") top / cover;
+
+// Golpes Lunares Crescentes – evoca a dualidade entre a escuridão da noite e o brilho lunar
+
+$doma: linear-gradient(180deg, #00c6ff 0%, #0072ff 100%), url("@public/onis/doma/doma-fundo.png") top / cover;
+
+// Criocinese das Ondas Gélidas – tons gelados e intensos que remetem ao gelo e à frieza
+
+$akaza: linear-gradient(180deg, #B30000 0%, #2C2C2C 100%), url("@public/onis/akaza/akaza-fundo.png") top / cover;
+
+// Morte Destrutiva: Agulha da Bússola – mistura de vermelhos intensos com sombras densas para refletir a violência de seus ataques
+
+$hantengu: linear-gradient(180deg, #8E44AD 0%, #5B2C6F 100%), url("@public/onis/hantengu/hantengu-fundo.png") top / cover;
+
+// Manifestação das Quatro Máscaras Emocionais – um roxo multifacetado que traduz a complexidade emocional do personagem
+
+$gyokko: linear-gradient(180deg, #f5f5f5ab 0%, #7F8C8D 100%), url("@public/onis/gyokko/gyokko-fundo.png") top / cover;
+
+// Cerâmica Viva: Transmutação Corpórea – tons neutros e terrosos que lembram a porcelana e a arte da cerâmica
+
+$daki: linear-gradient(180deg, #FFB6C1 0%, #C71585 100%), url("@public/onis/daki/daki-fundo.png") top / cover;
+
+// Manipulação da Faixa Obi – um mix de rosa suave e vibrante, ressaltando a beleza e a armadilha que é seu kekijjutsu
+
+$gyutaro: linear-gradient(180deg, #B22222 0%, #4B0082 100%), url("@public/onis/gyutaro/gyutaro-fundo.png") top / cover;
+
+// Manipulação de Sangue Venenoso – a intensidade do vermelho funde-se com um toque de mistério e veneno em roxo profundo
+
+$nakime: linear-gradient(180deg, #1F1C2C 0%, #928DAB 100%), url("@public/onis/nakime/nakime-fundo.png") top / cover;
+
+// Dimensão do Castelo Infinito – nuances escuras que se abrem para tons etéreos, sugerindo a transição entre mundos
+
+$kaigaku: linear-gradient(180deg, #00ffffc5 0%, #00008B 100%), url("@public/onis/kaigaku/kaigaku-fundo.png") top / cover;
+
+// Eletrocinese do Trovão Celestial – o contraste entre o ciano elétrico e o azul noturno evoca a força dos relâmpagos
+
+// Enmu - Manipulação dos Sonhos
+$enmu: linear-gradient(180deg, #C06C84 0%, #6C5B7B 100%), 
+       url("@public/onis/enmu/enmu-fundo.png") top / cover;
+
+// Rokuro - Impacto Cinético
+$rokuro: linear-gradient(180deg, #FF512F 0%, #F09819 100%), 
+         url("@public/onis/rokuro/rokuro-fundo.png") top / cover;
+
+// Wakuraba - Velocidade Extrema
+$wakuraba: linear-gradient(180deg, #2af598 0%, #009efd 100%), 
+           url("@public/onis/wakuraba/wakuraba-fundo.png") top / cover;
+
+// Mukago - Evasão Sombria
+$mukago: linear-gradient(180deg, #232526 0%, #414345 100%), 
+         url("@public/onis/mukago/mukago-fundo.png") top / cover;
+
+// Rui - Manipulação de Fios
+$rui: linear-gradient(180deg, #FF5F6D 0%, #FFC371 100%), 
+      url("@public/onis/rui/rui-fundo.png") top / cover;
+
+// Kamanue - Potência Amplificada
+$kamanue: linear-gradient(180deg, #F96 0%, #FF5E62 100%), 
+          url("@public/onis/kamanue/kamanue-fundo.png") top / cover;
+
+// Kyogai - Manipulação dos Tambores
+$kyogai: linear-gradient(180deg, #654ea3 0%, #eaafc8 100%), 
+         url("@public/onis/kyogai/kyogai-fundo.png") top / cover;
+
+
 // Mixins
 @mixin fundo-personagem($personagem) {
   background: $personagem;

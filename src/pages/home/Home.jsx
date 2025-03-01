@@ -7,7 +7,7 @@ import { Header } from '@c/Header/Header'
 import { Tooltip } from '@c/Tooltip/Tooltip'
 
 import { hashiras } from '@src/data/hashiras.js'
-// import { Onis } from '@src/data/onis.js'
+import { Onis } from '@src/data/onis.js'
 import { personagens } from '@src/data/personagens.js'
 
 // import iconOni from '@public/icons/IconMuzan.png'
@@ -23,9 +23,11 @@ export const Home = () => {
   const [modOni, setModOni] = useState(false)
   const [animating, setAnimating] = useState(false)
 
-  let personagensSerRenderizado = /*modOni
+  let personagensSerRenderizado = modOni
     ? Onis
-    :*/ modPersonagem ? hashiras : personagens
+    : modPersonagem
+      ? hashiras
+      : personagens
 
   const larguraTela = window.innerWidth
 
@@ -61,7 +63,7 @@ export const Home = () => {
     return () => {
       cards.forEach((card) => observer.unobserve(card))
     }
-  }, [modPersonagem])
+  }, [modPersonagem, modOni])
 
   const scrollLeft = () => {
     if (containerRef.current) {
@@ -102,6 +104,7 @@ export const Home = () => {
 
     setTimeout(() => {
       setModOni((prev) => !prev)
+      setModPersonagem(false)
       setFadingOut(false)
       setAnimating(false)
     }, 510)
@@ -133,7 +136,13 @@ export const Home = () => {
             {modOni ? '12 Kizukis' : modPersonagem ? 'Hashiras' : 'Personagens'}
           </h1>
 
-          <button className={S.button_oni} onClick={handleToggleOni}>
+          <button
+            onClick={handleToggleOni}
+            className={`
+              ${S.button_toggle} 
+              ${modOni ? S.oni : S.slayer}
+            `}
+          >
             {modOni ? 'Ver Caçadores' : 'Ver Onis'}
           </button>
         </div>
@@ -142,7 +151,9 @@ export const Home = () => {
           className={
             modPersonagem
               ? S.container_main__characters_hashiras
-              : S.container_main__characters
+              : modOni
+                ? S.container_main__onis
+                : S.container_main__characters
           }
           ref={containerRef}
         >
@@ -157,6 +168,7 @@ export const Home = () => {
                   <img
                     src={personagem.galeria[0]}
                     alt={`Personagem ${personagem.nome}`}
+                    loading="lazy"
                   />
                 </div>
               </article>
@@ -171,7 +183,7 @@ export const Home = () => {
               : S.container_buttons
           }
         >
-          {larguraTela <= 800 ? (
+          {larguraTela <= 800 || modOni ? (
             <div
               className={S.container_buttons_controles}
               style={{ display: 'flex' }}
@@ -203,23 +215,6 @@ export const Home = () => {
                 </button>
               </div>
             )
-          )}
-
-          {modOni && (
-            <div
-              className={S.container_buttons_controles}
-              style={{ display: 'flex' }}
-            >
-              <button onClick={scrollLeft} className={S.button_hashira}>
-                <img src={IconSeta} alt="Icone" />
-                <p>Anterior</p>
-              </button>
-
-              <button onClick={scrollRight} className={S.button_hashira}>
-                <p>Próximo</p>
-                <img src={IconSeta} alt="Icone" />
-              </button>
-            </div>
           )}
 
           {!modOni && (

@@ -5,13 +5,19 @@ import { useParams } from 'react-router-dom'
 import { Header } from '@c/Header/Header'
 
 import { hashiras } from '@src/data/hashiras.js'
+import { Onis } from '@src/data/onis.js'
 import { personagens } from '@src/data/personagens.js'
-import { PersonagemNaoEncontrado } from '../../components/PersonagemNaoEncontrado/PersonagemNaoEncontrado'
+
+import { PersonagemNaoEncontrado } from '@c/PersonagemNaoEncontrado/PersonagemNaoEncontrado'
 
 export const PersonagemDetalhes = () => {
   const { id } = useParams() // Obtém o ID da URL
-  const dados = id > 4 ? hashiras : personagens
+  const dados = id > 4 && id < 14 ? hashiras : id > 13 ? Onis : personagens
   const personagem = dados.find((personagem) => personagem.id == id)
+
+  const respiracaoOuKekijjutsu = personagem.respiracao1
+    ? personagem.respiracao1
+    : personagem.kekkijutsu
 
   if (!personagem) {
     return <PersonagemNaoEncontrado />
@@ -20,6 +26,7 @@ export const PersonagemDetalhes = () => {
   const getTituloRespiracao = (personagem) => {
     if (personagem.nome === 'Nezuko Kamado') return 'Kekkijutsu'
     if (personagem.respiracao2) return 'Estilos de Respirações'
+    if (personagem.id > 13) return 'Kekkijutsu'
     return 'Estilo de Respiração'
   }
 
@@ -34,14 +41,15 @@ export const PersonagemDetalhes = () => {
             <p>{personagem.paragrafo1}</p>
             <p>{personagem.paragrafo2}</p>
           </section>
+
           <section className={S.container_main__respiracoes}>
             <h2>{getTituloRespiracao(personagem)}</h2>
 
             <div className={S.respiracoes__items_container}>
               <div
-                className={`${S.container__item} ${S[personagem.respiracao1[0]]}`}
+                className={`${S.container__item} ${S[respiracaoOuKekijjutsu[0]]}`}
               >
-                <p>{personagem.respiracao1[1]}</p>
+                <p>{respiracaoOuKekijjutsu[1]}</p>
               </div>
               {personagem.respiracao2 && (
                 <div
@@ -57,7 +65,9 @@ export const PersonagemDetalhes = () => {
         <section className={S.container_main__imagem_personagem}>
           <img
             src={
-              personagem.id > 8 ? personagem.galeria[0] : personagem.galeria[2]
+              personagem.galeria[2]
+                ? personagem.galeria[2]
+                : personagem.galeria[0]
             }
             alt={`Personagem ${personagem.nome}`}
           />

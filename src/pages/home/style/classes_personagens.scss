@@ -51,22 +51,104 @@
 
 .fundo_gyomei {
   @include fundo-personagem($gyomei);
+
+  img {
+    transform: translate(25px, 5px);
+  }
 }
 
 .fundo_sanemi {
   @include fundo-personagem($sanemi);
+
+  img {
+    transform: translate(5px, 8px)
+  }
 }
 
 .fundo_shinobu {
   @include fundo-personagem($shinobu);
+
+  img {
+    transform: translate(15px, 5px);
+  }
 }
 
 .fundo_mitsuri {
   @include fundo-personagem($mitsuri);
+
+  img {
+    transform: translate(20px, 8px);
+  }
 }
 
 .fundo_obanai {
   @include fundo-personagem($obanai);
+}
+
+// Classes de Onis
+
+.fundo_kokushibo {
+  @include fundo-personagem($kokushibo);
+}
+
+.fundo_doma {
+  @include fundo-personagem($doma);
+}
+
+.fundo_akaza {
+  @include fundo-personagem($akaza);
+}
+
+.fundo_hantengu {
+  @include fundo-personagem($hantengu);
+}
+
+.fundo_gyokko {
+  @include fundo-personagem($gyokko);
+}
+
+.fundo_daki {
+  @include fundo-personagem($daki);
+}
+
+.fundo_gyutaro {
+  @include fundo-personagem($gyutaro);
+}
+
+.fundo_nakime {
+  @include fundo-personagem($nakime);
+}
+
+.fundo_kaigaku {
+  @include fundo-personagem($kaigaku);
+}
+
+.fundo_enmu {
+  @include fundo-personagem($enmu);
+}
+
+.fundo_rokuro {
+  @include fundo-personagem($rokuro);
+}
+
+.fundo_wakuraba {
+  @include fundo-personagem($wakuraba);
+}
+
+.fundo_mukago {
+  @include fundo-personagem($mukago);
+}
+
+.fundo_rui {
+  @include fundo-personagem($rui);
+}
+
+.fundo_kamanue {
+  @include fundo-personagem($kamanue);
+}
+
+.fundo_kyogai {
+  @include fundo-personagem($kyogai);
 }
 
 @media (width <= 768px) {
@@ -76,3 +158,4 @@
     }
   }
 }
+
