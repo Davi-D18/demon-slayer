@@ -3,16 +3,13 @@ import S from './style/home.module.scss'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import { ButtonPrimary } from '@c/ButtonPrimary/ButtonPrimary'
 import { Header } from '@c/Header/Header'
 import { Tooltip } from '@c/Tooltip/Tooltip'
 
 import { hashiras } from '@src/data/hashiras.js'
 import { Onis } from '@src/data/onis.js'
 import { personagens } from '@src/data/personagens.js'
-
-// import iconOni from '@public/icons/IconMuzan.png'
-import IconSeta from '@public/icons/seta-direita.png'
-// import IconHashira from '@public/icons/slayer.svg'
 
 export const Home = () => {
   const containerRef = useRef(null) // Referência para o container dos cards
@@ -183,46 +180,41 @@ export const Home = () => {
               : S.container_buttons
           }
         >
-          {larguraTela <= 800 || modOni ? (
-            <div
-              className={S.container_buttons_controles}
-              style={{ display: 'flex' }}
-            >
-              <button onClick={scrollLeft} className={S.button_hashira}>
-                <img src={IconSeta} alt="Icone" />
-                <p>Anterior</p>
-              </button>
+          <div
+            className={S.container_buttons_controles}
+            style={{ display: 'flex' }}
+          >
+            {larguraTela <= 800 || modOni ? (
+              <>
+                <ButtonPrimary
+                  onClick={scrollLeft}
+                  texto="Anterior"
+                  setaInvertida={true}
+                />
 
-              <button onClick={scrollRight} className={S.button_hashira}>
-                <p>Próximo</p>
-                <img src={IconSeta} alt="Icone" />
-              </button>
-            </div>
-          ) : (
-            modPersonagem && (
-              <div
-                className={S.container_buttons_controles}
-                style={{ display: 'flex' }}
-              >
-                <button onClick={scrollLeft} className={S.button_hashira}>
-                  <img src={IconSeta} alt="Icone" />
-                  <p>Anterior</p>
-                </button>
+                <ButtonPrimary onClick={scrollRight} texto="Próximo" />
+              </>
+            ) : (
+              modPersonagem && (
+                <>
+                  <ButtonPrimary
+                    onClick={scrollLeft}
+                    texto="Anterior"
+                    setaInvertida={true}
+                  />
 
-                <button onClick={scrollRight} className={S.button_hashira}>
-                  <p>Próximo</p>
-                  <img src={IconSeta} alt="Icone" />
-                </button>
-              </div>
-            )
-          )}
+                  <ButtonPrimary onClick={scrollRight} texto="Próximo" />
+                </>
+              )
+            )}
+          </div>
 
           {!modOni && (
             <div className={S.container_button_hashira}>
-              <button className={S.button_hashira} onClick={handleChange}>
-                <p>{modPersonagem ? 'Personagens' : 'Hashiras'}</p>
-                <img src={IconSeta} alt="Icone" />
-              </button>
+              <ButtonPrimary
+                onClick={handleChange}
+                texto={modPersonagem ? 'Personagens' : 'Hashiras'}
+              />
             </div>
           )}
         </section>
