@@ -143,7 +143,7 @@ export const Home = () => {
               ${modOni ? S.oni : S.slayer}
             `}
           >
-            {modOni ? 'Ver Caçadores' : 'Ver Onis'}
+            {modOni ? 'Caçadores' : 'Onis'}
           </button>
         </div>
 
