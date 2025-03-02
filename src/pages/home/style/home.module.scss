@@ -146,40 +146,11 @@ article.visible {
   justify-content: flex-end;
 }
 
-.button_hashira {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1.2rem 1.3rem;
-  background-color: #111;
-  border: none;
-  border-radius: 3.4rem;
-  transition: transform 0.3s ease-in-out;
-  cursor: pointer;
-
-  p {
-    font-size: 1.4rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: $slayer-orange;
-  }
-
-  &:hover {
-    transform: scale(1.05);
-  }
-}
-
 .container_buttons_controles {
   display: none;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-
-  button:nth-child(1) {
-    img {
-      transform: rotate(180deg);
-    }
-  }
 }
 
 .container_buttons.active {
